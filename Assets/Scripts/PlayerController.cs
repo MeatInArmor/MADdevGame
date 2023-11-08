@@ -1,4 +1,3 @@
-using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -16,9 +15,9 @@ namespace ShadowChimera
 		[SerializeField] private float m_speedChangeRate = 10f;
 		[SerializeField] private float m_moveSpeed = 5f;
 		[SerializeField] private float m_sprintSpeed = 10f;
-		[SerializeField] private float m_speedRotation = 40f;
-		[SerializeField] private float m_topClamp = 45f;
-		[SerializeField] private float m_bottomClamp = 0f;
+		[SerializeField] private float m_speedRotation = 200f;
+		[SerializeField] private float m_topClamp = 70f;
+		[SerializeField] private float m_bottomClamp = -9f;
 
 		private float m_cameraTargetYaw;
 		private float m_cameraTargetPitch;
@@ -110,7 +109,9 @@ namespace ShadowChimera
 			m_characterController.Move(horizontal + vertical);
 		}
 
-        private void CameraRotation(Vector2 look)
+		
+
+		private void CameraRotation(Vector2 look)
 		{
 			const float threshold = 0.01f;
 			
@@ -125,10 +126,10 @@ namespace ShadowChimera
 			m_cameraTargetYaw = ClampAngle(m_cameraTargetYaw, float.MinValue, float.MaxValue);
 			m_cameraTargetPitch = ClampAngle(m_cameraTargetPitch, m_bottomClamp, m_topClamp);
 
-			m_cameraTarget.rotation = Quaternion.Euler(50, 20, 0f);
+			m_cameraTarget.rotation = Quaternion.Euler(m_cameraTargetPitch, m_cameraTargetYaw, 0f);
 		}
 
-        private static float ClampAngle(float angle, float min, float max)
+		private static float ClampAngle(float angle, float min, float max)
 		{
 			if (angle < -360f)
 			{
