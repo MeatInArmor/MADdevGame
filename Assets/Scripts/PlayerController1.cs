@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 namespace ShadowChimera
 {
-	public class PlayerController : MonoBehaviour
+	public class PlayerController1 : MonoBehaviour
 	{
 		[SerializeField] private InputActionAsset m_inputActionAsset;
 		[SerializeField] private CharacterController m_characterController;
@@ -110,6 +110,7 @@ namespace ShadowChimera
 			m_characterController.Move(horizontal + vertical);
 		}
 
+
         private void CameraRotation(Vector2 look)
 		{
 			const float threshold = 0.01f;
@@ -125,8 +126,14 @@ namespace ShadowChimera
 			m_cameraTargetYaw = ClampAngle(m_cameraTargetYaw, float.MinValue, float.MaxValue);
 			m_cameraTargetPitch = ClampAngle(m_cameraTargetPitch, m_bottomClamp, m_topClamp);
 
-			m_cameraTarget.rotation = Quaternion.Euler(50, 20, 0f);
+			m_cameraTarget.rotation = Quaternion.Euler(m_cameraTargetPitch, m_cameraTargetYaw, 0f);
 		}
+
+		private void CameraRotation2()
+		{
+
+		}
+
 
         private static float ClampAngle(float angle, float min, float max)
 		{
