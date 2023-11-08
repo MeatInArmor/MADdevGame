@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 namespace ShadowChimera
 {
-	public class PlayerController : MonoBehaviour
+	public class TopPersonController : MonoBehaviour
 	{
 		[SerializeField] private InputActionAsset m_inputActionAsset;
 		[SerializeField] private CharacterController m_characterController;
