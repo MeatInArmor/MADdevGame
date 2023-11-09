@@ -307,9 +307,9 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_XDamping: 0.2
+  m_YDamping: 0.2
+  m_ZDamping: 0.2
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
@@ -2542,7 +2542,7 @@ MonoBehaviour:
   m_inputActionAsset: {fileID: -944628639613478452, guid: 1eb9786b1712ca941b3f0ac3069114d1, type: 3}
   m_characterController: {fileID: 1010628120}
   m_cameraTransform: {fileID: 963194228}
-  m_rotationSmoothTime: 0.12
+  m_rotationSmoothTime: 0.115
   m_speedChangeRate: 10
   m_moveSpeed: 5
   m_sprintSpeed: 10
